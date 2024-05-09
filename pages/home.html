@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style/main.css">
+</head>
+<body>
+    <div class="header">
+        <h3 id="nm">worble</h3>
+        <p id="slogan">The News of the Galaxy</p>
+        <h1 id="page">home page</h1>
+        <nav id="spaceNav">
+            <ul id="lol" class="main-menu">
+                <li><a href="#">Current Events</a>
+                    <ul class="dropdown">
+                        <li><a href="#CurEvnt.html">Latest News</a></li>
+                        <li><a href="#FieldJur.html">Field Journalist</a></li>
+                    </ul>
+                </li>
+                <li><a href="#home.html">Home</a></li>
+                <li><a href="#">Reports</a>
+                    <ul class="dropdown">
+                        <li><a href="#investigatorRep.html">Reporter</a></li>
+                        <li><a href="#pps.html">Perspective & Solution</a></li>
+                    </ul>
+                </li>
+                <li><a href="#radio.html">Radio Reporter</a></li>
+            </ul>
+        </nav>
+    </div>
+    <script>
+        // Function to create stars
+        function createStars() {
+            const starsNumber = 150;
+            const existingStars = document.querySelectorAll('.star');
+            existingStars.forEach(star => star.remove()); // Remove all existing stars before adding new ones
+
+            for (let i = 0; i < starsNumber; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = `${Math.random() * window.innerWidth}px`;
+                star.style.top = `${Math.random() * window.innerHeight}px`;
+                star.style.animationDuration = `${Math.random() * 2 + 1}s`; // Randomize animation speed
+                star.style.width = `${Math.random() * 2 + 1}px`; // Randomize star size
+                star.style.height = star.style.width;
+                document.body.appendChild(star);
+            }
+        }
+
+        // Handle resize event
+        window.addEventListener('resize', createStars);
+
+        // Initial star creation
+        window.onload = createStars;
+    </script>
+</body>
+</html>
