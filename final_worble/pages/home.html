@@ -29,56 +29,45 @@
             </ul>
         </nav>
     </div>
-    <div id="spaceship" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-        <!-- You can replace this with an actual image if you have one -->
-        <img src="path_to_your_spaceship_image.png" alt="Spaceship" style="width: 100px; height: auto;">
-    </div>
+    <canvas id="back"></canvas>
+<canvas id="middle"></canvas>
+<canvas id="front"></canvas>
+
     <script>
-function createBackgroundElements() {
+function createStars() {
     const starsNumber = 150;
-    const linesNumber = 30; // Number of moving lines
-
-    // Remove existing stars and lines
-    document.querySelectorAll('.star, .line').forEach(element => element.remove());
-
-    // Create stars
     for (let i = 0; i < starsNumber; i++) {
         const star = document.createElement('div');
         star.className = 'star';
-        star.style.left = `${Math.random() * window.innerWidth}px`;
+        star.style.left = `${Math.random() * window.innerWidth}px`; // Set initial random position
         star.style.top = `${Math.random() * window.innerHeight}px`;
+        star.initialLeft = parseFloat(star.style.left); // Store initial left position for consistent movement
         document.body.appendChild(star);
     }
-
-    // Create lines
-    for (let i = 0; i < linesNumber; i++) {
-        const line = document.createElement('div');
-        line.className = 'line';
-        line.style.left = `${Math.random() * window.innerWidth}px`;
-        line.style.top = `${Math.random() * window.innerHeight}px`;
-        line.style.backgroundColor = i % 2 === 0 ? 'blue' : 'red'; // Alternate between blue and red
-        document.body.appendChild(line);
-    }
 }
 
-function recycleElement(element) {
-    element.style.left = `${window.innerWidth + 10}px`;
-    element.style.top = `${Math.random() * window.innerHeight}px`;
-}
+function updateStars() {
+    const stars = document.querySelectorAll('.star');
+    stars.forEach(star => {
+        let currentLeft = parseFloat(star.style.left);
+        currentLeft -= 2; // Move star left by 2px
+        star.style.left = `${currentLeft}px`;
 
-function updateBackgroundElements() {
-    document.querySelectorAll('.star, .line').forEach(element => {
-        if (parseInt(element.style.left, 10) < -10) { // Check if the element has moved past the left edge
-            recycleElement(element);
+        // If a star moves past the left edge, reset it to the right edge
+        if (currentLeft < -5) { // Consider star width for smooth re-entry
+            star.style.left = `${window.innerWidth + 5}px`; // Move just out of view on the right
+            star.style.top = `${Math.random() * window.innerHeight}px`; // Optionally randomize the vertical position again
         }
     });
 }
 
 window.onload = function() {
-    createBackgroundElements();
-    setInterval(updateBackgroundElements, 50); // More frequent checking
+    createStars();
+    setInterval(updateStars, 50); // Update star positions every 50 milliseconds
 };
 
+
     </script>
+<script src="../scripts/home.js"></script>
 </body>
 </html>

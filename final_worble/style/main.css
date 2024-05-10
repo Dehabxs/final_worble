@@ -11,23 +11,16 @@ body {
 .header {
     text-align: center;
     padding: 20px;
-    background: linear-gradient(45deg, rgba(0, 50, 255, 0.7), rgba(0, 15, 100, 0.7), rgba(0, 25, 150, 0.7));
+    background: linear-gradient(45deg, rgba(128, 208, 255, 0.75), rgba(142, 4, 235, 0.7), rgba(5, 16, 73, 0.7));
     background-size: 400% 400%;
     position: relative;
     z-index: 10;
     animation: float 5s ease-in-out infinite, glow 8s linear infinite;
     color: white; /* Adjust text color for visibility */
-    box-shadow: 0 0 15px rgba(0, 50, 255, 0.75), 0 0 30px rgba(0, 15, 100, 0.75);
+    box-shadow: 0 0 15px rgba(128, 208, 255, 0.75), 0 0 30px rgba(47, 0, 100, 0.75);
 }
 
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
-}
+
 
 @keyframes glow {
     0%, 100% {
@@ -39,7 +32,7 @@ body {
 }
 
 #nm, #slogan {
-    text-shadow: 2px 2px 4px rgba(0, 50, 255, 1); /* Blue text shadow to make text pop */
+    text-shadow: 2px 2px 4px rgb(212, 0, 255); /* Blue text shadow to make text pop */
 }
 
 #nm {
@@ -67,20 +60,20 @@ body {
 .main-menu > li > a {
     display: block;
     padding: 10px 20px;
-    color: #0fefe8;
+    color: #0fcdef;
     text-decoration: none;
     transition: background 0.3s, color 0.3s;
 }
 
 .main-menu > li:hover > a {
-    background: #2b2c2f;
+    background: #169ec0;
 }
 
 .dropdown {
     position: absolute;
     display: none;
-    background: #2b2c2f;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background: #4eb5cfce;
+    box-shadow: 0 8px 16px rgba(0, 238, 255, 0.295);
     z-index: 1000;
     min-width: 180px;
 }
@@ -98,7 +91,7 @@ body {
 }
 
 .dropdown li a:hover {
-    background: #414345;
+    background: #06929c;
 }
 
 .main-menu > li:hover .dropdown {
@@ -113,9 +106,9 @@ body {
 .star {
     width: 2px;
     height: 2px;
-    background: white;
+    background: rgb(249, 222, 250);
     border-radius: 50%;
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 5px rgba(182, 94, 174, 0.8);
     animation: moveLeft 10s linear infinite, twinkle 2s infinite ease-in-out alternate;
 }
 
@@ -126,8 +119,8 @@ body {
 }
 
 @keyframes moveLeft {
-    from { left: 100%; }
-    to { left: -10%; }
+    from { }
+    to { nav-left: 10%;}
 }
 
 #spaceship {
@@ -142,3 +135,16 @@ body {
     0%, 100% { transform: translate(-50%, -10px); }
     50% { transform: translate(-50%, 10px); }
 }
+
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+
+canvas {
+  filter: blur(2px);
+}
+
