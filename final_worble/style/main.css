@@ -105,12 +105,40 @@ body {
     display: block;
 }
 
-.star {
+.star, .line {
     position: absolute;
+    animation: moveLeft 10s linear infinite; /* Shared animation for movement */
+}
+
+.star {
     width: 2px;
     height: 2px;
     background: white;
     border-radius: 50%;
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
-    animation: twinkle 2s infinite ease-in-out alternate;
+    animation: moveLeft 10s linear infinite, twinkle 2s infinite ease-in-out alternate;
+}
+
+.line {
+    width: 100px;
+    height: 2px;
+    opacity: 0.5;
+}
+
+@keyframes moveLeft {
+    from { left: 100%; }
+    to { left: -10%; }
+}
+
+#spaceship {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: bobbing 5s ease-in-out infinite;
+}
+
+@keyframes bobbing {
+    0%, 100% { transform: translate(-50%, -10px); }
+    50% { transform: translate(-50%, 10px); }
 }

@@ -1,0 +1,84 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style/main.css">
+</head>
+<body>
+    <div class="header">
+        <h3 id="nm">worble</h3>
+        <p id="slogan">The News of the Galaxy</p>
+        <h1 id="page">home page</h1>
+        <nav id="spaceNav">
+            <ul id="lol" class="main-menu">
+                <li><a href="#">Current Events</a>
+                    <ul class="dropdown">
+                        <li><a href="#CurEvnt.html">Latest News</a></li>
+                        <li><a href="#FieldJur.html">Field Journalist</a></li>
+                    </ul>
+                </li>
+                <li><a href="#home.html">Home</a></li>
+                <li><a href="#">Reports</a>
+                    <ul class="dropdown">
+                        <li><a href="#investigatorRep.html">Reporter</a></li>
+                        <li><a href="#pps.html">Perspective & Solution</a></li>
+                    </ul>
+                </li>
+                <li><a href="#radio.html">Radio Reporter</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="spaceship" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+        <!-- You can replace this with an actual image if you have one -->
+        <img src="path_to_your_spaceship_image.png" alt="Spaceship" style="width: 100px; height: auto;">
+    </div>
+    <script>
+function createBackgroundElements() {
+    const starsNumber = 150;
+    const linesNumber = 30; // Number of moving lines
+
+    // Remove existing stars and lines
+    document.querySelectorAll('.star, .line').forEach(element => element.remove());
+
+    // Create stars
+    for (let i = 0; i < starsNumber; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        star.style.left = `${Math.random() * window.innerWidth}px`;
+        star.style.top = `${Math.random() * window.innerHeight}px`;
+        document.body.appendChild(star);
+    }
+
+    // Create lines
+    for (let i = 0; i < linesNumber; i++) {
+        const line = document.createElement('div');
+        line.className = 'line';
+        line.style.left = `${Math.random() * window.innerWidth}px`;
+        line.style.top = `${Math.random() * window.innerHeight}px`;
+        line.style.backgroundColor = i % 2 === 0 ? 'blue' : 'red'; // Alternate between blue and red
+        document.body.appendChild(line);
+    }
+}
+
+function recycleElement(element) {
+    element.style.left = `${window.innerWidth + 10}px`;
+    element.style.top = `${Math.random() * window.innerHeight}px`;
+}
+
+function updateBackgroundElements() {
+    document.querySelectorAll('.star, .line').forEach(element => {
+        if (parseInt(element.style.left, 10) < -10) { // Check if the element has moved past the left edge
+            recycleElement(element);
+        }
+    });
+}
+
+window.onload = function() {
+    createBackgroundElements();
+    setInterval(updateBackgroundElements, 50); // More frequent checking
+};
+
+    </script>
+</body>
+</html>
