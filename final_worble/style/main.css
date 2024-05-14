@@ -3,7 +3,7 @@
 body {
     margin: 0;
     padding: 0;
-    background: black; /* Black background */
+    background: rgb(0, 0, 0); /* Black background */
     overflow: hidden;
     height: 100vh;
 }
@@ -17,7 +17,7 @@ body {
     z-index: 10;
     animation: float 5s ease-in-out infinite, glow 8s linear infinite;
     color: white; /* Adjust text color for visibility */
-    box-shadow: 0 0 15px rgba(128, 208, 255, 0.75), 0 0 30px rgba(47, 0, 100, 0.75);
+    box-shadow: 0 0 15px rgba(8, 29, 39, 0.75), 0 0 30px rgba(47, 0, 100, 0.75);
 }
 
 
@@ -42,8 +42,8 @@ body {
 }
 
 #slogan {
-    font-size: 1.5em;
-    margin: 10px 0;
+    font-size: 1em;
+    margin: 2px 0;
 }
 
 .main-menu {
@@ -59,7 +59,7 @@ body {
 
 .main-menu > li > a {
     display: block;
-    padding: 10px 20px;
+    padding: 1px 70px;
     color: #0fcdef;
     text-decoration: none;
     transition: background 0.3s, color 0.3s;
@@ -145,6 +145,6 @@ canvas {
 
 
 canvas {
-  filter: blur(2px);
+  filter: blur(1.3px);
 }
 

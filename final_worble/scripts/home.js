@@ -21,18 +21,18 @@ window.onload = function(){
         this.oy = y;
         this.br = r;
         this.re = Math.random() * r;
-        this.col = "rgb(255,"+(Math.floor(100+Math.random()*50))+",80,0.5)";
-        this.a = Math.random() * 2 * Math.PI;
-        this.size = Math.random() * 4;
-        this.q = 1 / 3 + Math.random() * (1 / 2 - 1 / 3);
-        this.h2p = 10;
+        this.col = "rgb(35,"+(Math.floor(1000+Math.random()*890))+",220, 6)";
+        this.a = Math.random() * 3 * Math.PI;
+        this.size = Math.random() * 2;
+        this.q = 1 / 3 + Math.random() * (23/ 9 - 1 / 7);
+        this.h2p = 20;
         this.x =
           this.ox + (this.br + this.re + this.size + this.h2p) * Math.cos(this.a);
         this.y =
           this.oy +
           (this.br + this.re + this.size + this.h2p) * this.q * Math.sin(this.a);
         this.tail = [{x:this.x,y:this.y,a:this.a}];
-        this.tl = Math.floor(Math.random()*5+5);
+        this.tl = Math.floor(Math.random()*5+2);
       }
       move(x,y) {
         this.ox = x;
@@ -59,7 +59,7 @@ window.onload = function(){
         b.fill();
         }else{
         f.beginPath();
-        f.arc(this.tail[i].x, this.tail[i].y, this.size, 0, 2 * Math.PI);
+        f.arc(this.tail[i].x, this.tail[i].y, this.size, 1, 2 * Math.PI);
         f.fillStyle = this.col;
         f.fill();
         }
@@ -86,7 +86,7 @@ window.onload = function(){
     
       m.beginPath();
       m.arc(w / 2, h / 2, 100, 0, 2 * Math.PI);
-      m.fillStyle = "yellow";
+      m.fillStyle = "white";
       m.fill();
     }
     
