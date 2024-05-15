@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 document.querySelectorAll('#lol a').forEach(item => {
     item.addEventListener('mouseover', () => {
         item.style.textShadow = '0 0 20px #00ffff';
@@ -24,3 +25,5 @@ function createStars() {
 }
 
 window.onload = createStars;
+=======
+>>>>>>> Stashed changes

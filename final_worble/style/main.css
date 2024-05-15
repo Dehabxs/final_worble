@@ -1,23 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
+
+body {
+    background-color: rgb(42, 42, 52);
+
+
+}
 body {
     margin: 0;
     padding: 0;
     background: black; /* Black background */
     overflow: hidden;
     height: 100vh;
+    background-image: url("../public/back.gif"); /* Path to your GIF */
+    background-size: cover; /* Cover the entire viewport */
+    background-repeat: no-repeat; /* Prevent repeating the background image */
+    background-position: center; /* Center the background image */
 }
-
 .header {
     text-align: center;
     padding: 20px;
+<<<<<<< Updated upstream
     background: linear-gradient(45deg, rgba(0, 50, 255, 0.7), rgba(0, 15, 100, 0.7), rgba(0, 25, 150, 0.7));
+=======
+    background: linear-gradient(45deg, rgb(42, 43, 43), rgb(0, 195, 255), rgb(41, 41, 42));
+>>>>>>> Stashed changes
     background-size: 400% 400%;
     position: relative;
     z-index: 10;
     animation: float 5s ease-in-out infinite, glow 8s linear infinite;
     color: white; /* Adjust text color for visibility */
+<<<<<<< Updated upstream
     box-shadow: 0 0 15px rgba(0, 50, 255, 0.75), 0 0 30px rgba(0, 15, 100, 0.75);
+=======
+    box-shadow: 0 0 15px rgb(8, 29, 39), 0 0 30px rgb(0, 0, 0);
+>>>>>>> Stashed changes
 }
 
 @keyframes float {
@@ -66,8 +83,13 @@ body {
 
 .main-menu > li > a {
     display: block;
+<<<<<<< Updated upstream
     padding: 10px 20px;
     color: #0fefe8;
+=======
+    padding: 1px 70px;
+    color: #6bdefb;
+>>>>>>> Stashed changes
     text-decoration: none;
     transition: background 0.3s, color 0.3s;
 }
@@ -105,6 +127,7 @@ body {
     display: block;
 }
 
+<<<<<<< Updated upstream
 .star, .line {
     position: absolute;
     animation: moveLeft 10s linear infinite; /* Shared animation for movement */
@@ -118,6 +141,8 @@ body {
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
     animation: moveLeft 10s linear infinite, twinkle 2s infinite ease-in-out alternate;
 }
+=======
+>>>>>>> Stashed changes
 
 .line {
     width: 100px;
@@ -130,6 +155,7 @@ body {
     to { left: -10%; }
 }
 
+<<<<<<< Updated upstream
 #spaceship {
     position: absolute;
     top: 50%;
@@ -142,3 +168,17 @@ body {
     0%, 100% { transform: translate(-50%, -10px); }
     50% { transform: translate(-50%, 10px); }
 }
+=======
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+
+canvas {
+  filter: blur(1.3px);
+}
+
+>>>>>>> Stashed changes

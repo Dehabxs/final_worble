@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    background-image: url('https://www.example.com/path-to-your-space-background-image.jpg'); /* Use your own image URL */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  height: 10vh;
+  background: linear-gradient(to bottom, #252046, #4d4594, #15152d, #14092b, #1a2537, #21445a);
+  background-size: 150% 150%;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 50% 0%; }
+  50% { background-position: 50% 100%; }
+  100% { background-position: 50% 0%; }
+}
+
+
+h3 {
+    margin: 0;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+}
+h3 img {
+    margin-right: 10px;
+    width: 15%; /* Adjust size as needed */
+    height: 5%;
+}
+.home-button {
+    background-color: #0066cc;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.home-button:hover {
+    background-color: #005bb5;
+}
+
+@import "compass/css3";
+
+html,body {margin:
+  0;height:100%;
+   overflow:hidden;
+  }
+body {background: linear-gradient(to bottom, #141126, #151328, #15152d, #14092b, #1a2537, #21445a);
+  background-size: 150% 150%;
+  animation: gradientAnimation 10s ease infinite;}
+img{
+  width: 100% ;
+  height: 200% ;
+  border-radius: 90%;
+}
