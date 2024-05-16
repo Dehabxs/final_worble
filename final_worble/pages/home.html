@@ -1,12 +1,83 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../style/main.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enhanced Sci-Fi Themed Header</title>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Orbitron', sans-serif;
+        background: url('../public/back.gif') no-repeat center center fixed;
+        background-size: cover;
+        color: #fff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+    .header {
+        background: rgba(0, 0, 0, 0.8);
+        text-align: center;
+        padding: 10px 0;
+        position: relative;
+    }
+    .header img.logo {
+        position: absolute;
+        border-radius: 1060%;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100px;
+        animation: spin 4s linear infinite;
+    }
+    @keyframes spin {
+        from { transform: translateY(-50%) rotate(0deg); }
+        to { transform: translateY(-50%) rotate(360deg); }
+    }
+    #nm, #slogan, #page {
+        margin: 0;
+        padding: 5px;
+    }
+    nav {
+        margin-top: 10px;
+    }
+    .main-menu > li {
+        display: inline-block;
+        position: relative;
+        margin-right: 15px;
+        list-style: none;
+    }
+    .main-menu a {
+        text-decoration: none;
+        color: #adf;
+        font-size: 1.2em;
+        transition: color 0.5s, text-shadow 0.5s;
+    }
+    .main-menu a:hover {
+        color: #ff0;
+        text-shadow: 0 0 10px #fff, 0 0 20px #ff0;
+    }
+    .dropdown {
+        display: none;
+        position: absolute;
+        background: rgba(15, 15, 46, 0.8);
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+    .dropdown li {
+        display: block;
+    }
+    .main-menu li:hover .dropdown {
+        display: block;
+    }
+    canvas {
+        display: block;
+        margin: auto;
+        background: url('space-bg.jpg');
+        height: 200px;
+    }
+</style>
 </head>
 <body>
     <div class="header">
+        <img src="../public/worblle.jpg" alt="Logo" class="logo">
         <h3 id="nm">worble</h3>
         <p id="slogan">The News of the Galaxy</p>
         <h1 id="page">home page</h1>
@@ -14,59 +85,4 @@
             <ul id="lol" class="main-menu">
                 <li><a href="#">Current Events</a>
                     <ul class="dropdown">
-                        <li><a href="CurEvnt.html">Latest News</a></li>
-                        <li><a href="FieldJur.html">Field Journalist</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Reports</a>
-                    <ul class="dropdown">
-                        <li><a href="#investigatorRep.html">Reporter</a></li>
-                        <li><a href="#pps.html">Perspective & Solution</a></li>
-                    </ul>
-                </li>
-                <li><a href="#radio.html">Radio Reporter</a></li>
-            </ul>
-        </nav>
-    </div>
-    <canvas id="back"></canvas>
-<canvas id="middle"></canvas>
-<canvas id="front"></canvas>
-
-    <script>
-function createStars() {
-    const starsNumber = 150;
-    for (let i = 0; i < starsNumber; i++) {
-        const star = document.createElement('div');
-        star.className = 'star';
-        star.style.left = `${Math.random() * window.innerWidth}px`; // Set initial random position
-        star.style.top = `${Math.random() * window.innerHeight}px`;
-        star.initialLeft = parseFloat(star.style.left); // Store initial left position for consistent movement
-        document.body.appendChild(star);
-    }
-}
-
-function updateStars() {
-    const stars = document.querySelectorAll('.star');
-    stars.forEach(star => {
-        let currentLeft = parseFloat(star.style.left);
-        currentLeft -= 2; // Move star left by 2px
-        star.style.left = `${currentLeft}px`;
-
-        // If a star moves past the left edge, reset it to the right edge
-        if (currentLeft < -5) { // Consider star width for smooth re-entry
-            star.style.left = `${window.innerWidth + 5}px`; // Move just out of view on the right
-            star.style.top = `${Math.random() * window.innerHeight}px`; // Optionally randomize the vertical position again
-        }
-    });
-}
-
-window.onload = function() {
-    createStars();
-    setInterval(updateStars, 50); // Update star positions every 50 milliseconds
-};
-
-
-    </script>
-<script src="../scripts/home.js"></script>
-</body>
-</html>
+                        <li><a href="CurEv 
