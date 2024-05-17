@@ -1,50 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>worble</title>
-    <link rel="stylesheet" href="../style/page_headers.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Field Jurisdiction</title>
+<link rel="stylesheet" href="../style/page_headers.css">
 </head>
 <body>
-    <header>
-        <h3>
-                <!-- Use your own logo URL -->
-        <img src="../public/worblle.jpg" alt="Logo"> 
-        </h3>
-        <h2 style="left: -20%;">worblle:jurristiction</h2>
-        <a href="home.html" class="home-button">Home</a>
-    </header>
+    <div class="header">
+        <img src="../public/worblle.jpg" alt="Logo" class="logo">
+        <h3 id="nm">worble</h3>
+        <p id="slogan">The News of the Galaxy</p>
+        <h1 id="page">Field Jurisdiction</h1>
+        <nav id="spaceNav">
+            <button onclick="goHome()">Home</button>
+            <div class="menu-toggle" id="menuToggle">
+                <input type="checkbox" />
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul id="menu" class="main-menu">
+                    <li><a href="../pages/CurEvnt.html">Current Events</a></li>
+                    <li><a href="../pages/FieldJur.html">Field Jurisdiction</a></li>
+                    <li><a href="../pages/investergatorRep.html">Investigator Report</a></li>
+                    <li><a href="../pages/pps.html">PPS</a></li>
+                    <li><a href="../pages/radio.html">Radio</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
 
     <div id="content_box">
-        <h1>example heading</h1>
-        <p> example text</p>
+        <h1>Field Jurisdiction</h1>
+        <p>Field journalists play a crucial role in bringing real-time, on-the-ground reports from various sectors across the galaxy. Their insights and firsthand accounts provide invaluable information and perspectives on current events, conflicts, and discoveries.</p>
+    </div>
 
-
-
+    <div id="audio_box">
+        <h2>Field Journalist Radio Review</h2>
+        <p> in the coresponding audio our feild jurnalist will talk on there opinon on imagration and how it effect the us as a whole </p>
+        <audio controls>
+            <source src="../public/New Recording 2.m4a" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
     </div>
 
 
-    <div id="video">
-        <video src=""></video>
 
-
-
-
+    <div id="verification_box">
+        <h2>take the test?</h2>
+        <p>enter your email below and see your score on the leader board</p>
+        <input type="text" id="email_input" placeholder="Enter your email" />
+        <button onclick="sendVerificationCode()">Send Verification Code</button>
+        <input type="text" id="code_input" placeholder="Enter the verification code" style="display: none;" />
+        <button onclick="verifyCode()" style="display: none;">Verify Code</button>
+        <input type="text" id="username_input" placeholder="Enter your username" style="display: none;" />
+        <button onclick="completeRegistration()" style="display: none;">Complete Registration</button>
     </div>
 
-
-    <div id="audio bar">
-        <audio src=""></audio>
-
-
-
+    <div id="test_box" style="display: none;">
+        <p id="question"></p>
+        <div id="choices"></div>
     </div>
 
-    
-    
+    <div id="score_box">
+        <p>Score: <span id="score">0</span></p>
+    </div>
 
+    <div id="scoreboard_box" style="display: none;">
+        <h2>Scoreboard</h2>
+        <ul id="scoreboard"></ul>
+    </div>
 
-    
+    <script src="../scripts/VerifyEmail.js"></script>
+
 </body>
 </html>

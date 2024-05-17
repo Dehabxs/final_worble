@@ -1,71 +1,216 @@
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #000;
-    color: #fff;
-    background-image: url('https://www.example.com/path-to-your-space-background-image.jpg'); /* Use your own image URL */
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 30px;
-  height: 18vh;
-  background: linear-gradient(to bottom, #141126, #151328, #15152d, #14092b, #1a2537, #21445a);
-  background-size: 150% 150%;
-  animation: gradientAnimation 10s ease infinite;
+  font-family: 'Orbitron', sans-serif;
+  background: url('../public/back.gif') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  margin: 0;
+  padding: 20px;
 }
 
-@keyframes gradientAnimation {
-  0% { background-position: 50% 0%; }
-  50% { background-position: 50% 100%; }
-  100% { background-position: 50% 0%; }
+.header {
+  background: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  border-radius: 10px;
 }
 
-
-h3 {
-    margin: 0;
-    font-size: 24px;
-    display: flex;
-    align-items: center;
-}
-h3 img {
-    margin-right: 10px;
-    width: 15%; /* Adjust size as needed */
-    height: 5%;
-}
-.home-button {
-    background-color: #0066cc;
-    color: #fff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-}
-.home-button:hover {
-    background-color: #005bb5;
+.header img.logo {
+  position: absolute;
+  border-radius: 50%;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100px;
+  animation: spin 4s linear infinite;
 }
 
-@import "compass/css3";
 @keyframes spin {
   from { transform: translateY(-50%) rotate(0deg); }
   to { transform: translateY(-50%) rotate(360deg); }
 }
-html,body {margin:
-  0;height:100%;
-   overflow:hidden;
-  }
-body {background: linear-gradient(to bottom, #141126, #151328, #15152d, #14092b, #1a2537, #21445a);
-  background-size: 150% 150%;
-  animation: gradientAnimation 10s ease infinite;}
-img{
-  padding: 0vh;
-  position: center;
-  width: 10% ;
-  height: 100% ;
-  border-radius: 100%;
-  animation: spin 4s linear infinite; /* change duration timing-function delay iteration-count direction fill-mode;
-*/
 
+#nm, #slogan, #page {
+  margin: 0;
+  padding: 5px;
+}
+
+nav {
+  margin-top: 10px;
+  position: relative;
+}
+
+nav button {
+  background: #444;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+nav button:hover {
+  background: #555;
+  transform: scale(1.1);
+}
+
+.menu-toggle {
+  display: none;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 2;
+  user-select: none;
+}
+
+.menu-toggle input {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #fff;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.menu-toggle input:checked ~ span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.main-menu {
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: rgba(15, 15, 46, 0.8);
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 200px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.menu-toggle input:checked ~ .main-menu {
+  display: block;
+}
+
+.main-menu li {
+  display: block;
+}
+
+.main-menu a {
+  display: block;
+  text-decoration: none;
+  color: #adf;
+  font-size: 1.2em;
+  padding: 10px;
+  transition: color 0.5s, text-shadow 0.5s;
+}
+
+.main-menu a:hover {
+  color: #ff0;
+  text-shadow: 0 0 10px #fff, 0 0 20px #ff0;
+}
+
+#content_box, #audio_box, #verification_box, #test_box, #score_box, #scoreboard_box {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#content_box h1, #audio_box h2, #scoreboard_box h2 {
+  color: #adf;
+  text-shadow: 0 0 10px #fff, 0 0 20px #ff0;
+}
+
+#content_box p, #audio_box p {
+  font-size: 1.2em;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+audio {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+#verification_box input, #verification_box button, #username_input, #new_question_box button {
+  background: #444;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#verification_box button:hover, #new_question_box button:hover, #username_input:focus, #verification_box input:focus {
+  background: #555;
+  transform: scale(1.1);
+}
+
+#verification_box input, #username_input {
+  width: 80%;
+}
+
+#choices button, #new_question_box input {
+  background: #444;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#choices button:hover {
+  background: #555;
+  transform: scale(1.1);
+}
+
+#scoreboard {
+  list-style: none;
+  padding: 0;
+}
+
+#scoreboard li {
+  padding: 10px;
+  margin: 5px 0;
+  background: #333;
+  border-radius: 5px;
+  color: #fff;
 }
